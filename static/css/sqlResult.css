@@ -1,0 +1,71 @@
+div.DTTT {
+    margin-bottom: 0.1em;
+    float: right;
+}
+
+div.dataTables_wrapper {
+    clear: both;
+}
+
+.strSql {
+    width: 100%;
+    min-width: 200px;
+    resize: vertical;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.resultTab {
+    margin-top: 10px;
+}
+
+.resultTab .tabRst {
+    padding-right: 5px;
+    -webkit-border-top-left-radius: 11px;
+    -webkit-border-bottom-right-radius: 1px;
+    -moz-border-radius-topleft: 11px;
+    -moz-border-radius-bottomright: 11px;
+    border-top-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+.closeTab {
+    margin-left: 10px;
+    visibility: hidden;
+}
+
+.tab_plus span,
+.tabRst:hover .closeTab {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.tab_plus span {
+    margin-left: 10px;
+    top: 5px;
+}
+
+.resultShow .table {
+    font-size: 14px;
+}
+
+.resultShow .table tr,
+.resultShow .table td {
+    padding: 2px !important;
+    margin: 0px !important;
+}
+
+.tabRst span {
+    top: -7px;
+    left: 3px;
+}
+
+.divResultError {
+    display: none;
+}
+
+.divToolBar {
+    text-align: right;
+    margin-bottom: 5px;
+    margin-right: 15px;
+}

@@ -1,0 +1,33 @@
+<div class="menu_div myaccordion" id="menu_div">
+    <div class="accordion " id="accordionN">
+        {% for grp in catalog %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne{{grp[0]}}">
+                <div class="d-grid gap-2"><!-- accordion-button -->
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#n_collapse{{grp[0]}}" aria-expanded="true"
+                        aria-controls="n_collapse{{grp[0]}}">
+                        {{grp[1]}}
+                    </button>
+                </div>
+            </h2>
+            <div id="n_collapse{{ grp[0] }}" class="accordion-collapse collapse"
+                aria-labelledby="headingOne{{grp[0]}}" data-bs-parent="#accordionN">
+                <div class="accordion-body">
+                    <ul class="list-group ">
+                        {% if grp[2] %}
+                            {% for item in grp[2] %}
+                                <li class="list-group-item">
+                                    <INPUT class="btn btn-link accordion-button" type="button" onClick="putSql('{{item[2]}}');"
+                                        value="{{item[1]}}" />
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

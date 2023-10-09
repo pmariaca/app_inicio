@@ -1,0 +1,101 @@
+<div class="modal" id="mmodal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="ttab">
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab1" name="tab1">
+                            NEW GROUP
+                        </a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab2" name="tab2">
+                            DELETE GROUP
+                        </a></li>
+                </ul>
+                <form id="form_mod" class="tab-content form-horizontal" role="form">
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="tab1" class="tab-pane fade show active">
+                        <input type="text" class="form-control" placeholder="New group name" id="nameGroup"
+                            name="nameGroup">
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    <div id="tab2" class="tab-pane fade">
+                        <div id="accordionMod" class="myaccordion">
+                            {% for grp in catalog %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOnex{{grp[0]}}">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#nn_collapse{{grp[0]}}" aria-expanded="true"
+                                            aria-controls="nn_collapse{{grp[0]}}">
+                                            <input type="checkbox" class="grp" id="grp_{{grp[0]}}"
+                                                name="grp_{{grp[0]}}" />
+                                                {{grp[1]}}
+                                        </button>
+                                    </div>
+                                </h2>
+                                <div id="nn_collapse{{grp[0]}}" class="accordion-collapse collapse"
+                                    aria-labelledby="headingOnex{{grp[0]}}" data-bs-parent="#accordionMod">
+                                    <div class="accordion-body">
+                                        <ul class="list-group ">
+                                            {% if grp[2] %}
+                                            {% for item in grp[2] %}
+                                            <li class="list-group-item">
+                                                <input type="checkbox" name="itemGrp_{{grp[0]}}_{{item[0]}}" />
+                                                {{item[1]}}
+                                            </li>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnMod" name="btnMod">
+                    Save
+                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="modal" id="mmodal_add">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Guardar titulo de búsqueda actual</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning" role="alert" style="display: none;" id="divAlert">
+                    No hay busqueda para guardar
+                </div>
+            <input type="text" class="form-control" placeholder="New item name" id="itemGroup" name="itemGroup">
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="btnModAdd" name="btnModAdd">Save</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->

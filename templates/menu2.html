@@ -1,0 +1,40 @@
+<form id="form_menu2" role="form">
+    <div class="menu2_div myaccordion divShow" id="menu2_div">
+        <input type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#mmodal_add" id="addItem" name="addItem" value="SAVE">
+        <!--i class="fa fa-close"></i-->
+        <button id="btnAddItem" class="btn btn-secondary sm" type="button" data-bs-toggle="collapse"
+            data-bs-target="#nnn_collapse" aria-expanded="true" aria-controls="nnn_collapse" style="font-size:24px;">
+            <i class="fa fa-arrow-circle-down"></i>
+        </button>
+
+        <div class="accordion " id="accordionA">
+            <div class="accordion-item">
+                <div id="nnn_collapse" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionA">
+                    <div class="accordion-body">
+                        <ul class="list-group radio">
+                            {% for grp in catalog %}
+                            <li class="list-group-item list-group-item-primary">
+                                <input type="radio" name="addRadio" checked value="{{grp[0]}}">
+                                <strong>{{grp[1]}}</strong>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divShow">
+        <br>
+        <input type="search" class="form-control input-sm " id="searchTbl" onkeyup="buscaenLista('searchTbl','showList')" placeholder="Search" >
+        <div id="divShow" class="divShow  scrolly "></div>
+    </div>
+</form>
+<br>
+<button type="button" class="btn btn-primary btn-sm divShow" data-toggle="button" aria-pressed="false" autocomplete="off"
+    id="showMoreTab" name="showMoreTab">
+    SHOW SECOND TAB
+</button>

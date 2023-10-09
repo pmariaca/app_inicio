@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Catalogo</title>
+    <!-- bootstrap-5.3-dist   -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css'>
+    <!-- https://bootswatch.com/ watchDarkly  watchSolarlab watchPulse -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='less/watchSolarlab/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/catalog.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sqlResult.css') }}">
+
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+    <script src="{{ url_for('static', filename='js/catalog.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sqlResult.js') }}"></script>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="" id="navTop">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+                aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mmodal">
+                            MANEGE GROUP
+                        </a>
+                    </li>
+                </ul>
+                {% include "formnav.html" %}
+            </div>
+        </div>
+    </nav>
+    {% include "modal.html" %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                {% include "menu.html" %}
+            </div>
+            <div class="col-sm-8">
+                {% block content %}{% endblock content %}
+            </div>
+            <div class="col-sm-2">
+                {% include "menu2.html" %} 
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>

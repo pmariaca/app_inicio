@@ -1,0 +1,97 @@
+/*---------- nav div / menu div ----------*/
+#navTop {
+    margin-bottom: 15px;
+}
+
+.divMsgDb,
+.divExplainError,
+.divSelectDb,
+#resultShow2 {
+    display: none;
+}
+
+.divShown,
+#divShow,
+#navHelp,
+#navProcList,
+#navBottom,
+#showProcessList {
+    display: none;
+}
+
+.scrolly {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#mmodal ul {
+    margin-bottom: 15px;
+}
+
+.myaccordion .accordion-header {
+    padding: 5px 5px 5px 5px;
+}
+
+.myaccordion .accordion-body,
+.myaccordion .list-group,
+.myaccordion .accordion-body input,
+.myaccordion .accordion-header,
+.divShow .list-group,
+.divShow .list-group input {
+    padding: 2px !important;
+    margin: 0px !important;
+}
+
+.myaccordion .accordion-header button {
+    padding: 2px !important;
+    margin: 0px !important;
+    border: 1px solid transparent;
+    text-align: left;
+}
+
+.myaccordion .accordion-item {
+    padding: 0px !important;
+    margin: 0px !important;
+    border: 0px !important;
+}
+
+.myaccordion .list-group-item,
+.divShow .list-group-item,
+.divShow .option-name {
+    padding: 0px !important;
+    margin: 0px !important;
+    border: 1px solid transparent;
+}
+
+#accordionMod .list-group-item {
+    padding: 0px 0px 0px 50px !important;
+}
+
+#accordionMod {
+    max-height: 355px;
+    height: 35%;
+    overflow-y: scroll;
+}
+
+#accordionMod .accordion-heading a {
+    text-decoration: none;
+}
+
+#accordionMod .accordion-group {
+    margin-bottom: 5px;
+}
+
+/*---------- main div ----------*/
+#explainSql,
+#sendSql,
+#showProcessList,
+#showHelp {
+    margin-left: 15px;
+}
+
+#showHelp, #btnAddItem
+{
+    border: 0px !important;
+}
+
+/*---------- menu2 div ----------*/
